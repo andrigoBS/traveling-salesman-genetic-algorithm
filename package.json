@@ -1,0 +1,17 @@
+{
+  "name": "traveling-salesman-genetic-algorithm",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "fixed": "tsx src/main-fixed.ts",
+    "infinite": "tsx src/main-infinite.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tsx": "^4.15.5",
+    "typescript": "^5.4.5"
+  }
+}
