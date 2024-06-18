@@ -31,8 +31,10 @@ class Main {
         console.log('Exemplo', this.jsonPath);
         console.log('Quantidade de cidades', json.cities.length);
         console.log('Cidades', json.cities.join(','));
-        console.log('Caminho ótimo conhecido', json.optimal_path.join(' -> '));
-        console.log('Distancia do caminho ótimo conhecido', json.optimal_distance);
+        if(json.optimal_path[0] === json.cities[startCityIndex]) {
+            console.log('Caminho ótimo conhecido', json.optimal_path.join(' -> '));
+            console.log('Distancia do caminho ótimo conhecido', json.optimal_distance);
+        }
         console.log('Cidade de saida', json.cities[startCityIndex]);
         console.log('Tamanho da população', population);
         console.log('Porcentagem de sobreviventes por época', survivors);
@@ -60,4 +62,4 @@ class Main {
     }
 }
 
-await new Main('./in/13cities.json').run(100, 1000);
+await new Main('./in/20cities.json').run(100, 1000);
