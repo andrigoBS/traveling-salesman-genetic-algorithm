@@ -3,19 +3,11 @@ import {Node} from "./types";
 export default class Individual {
     static fromRandom(weightMatrix: Map<Node, Map<Node, number>>, startCity: Node): Individual {
         let sequence = [...weightMatrix.keys()];
-
-        sequence.sort((a, b) => {
-            if(a == startCity) {
-                return -1;
-            }
-            if(b == startCity) {
-                return 1;
-            }
-            return Math.round(Math.random() * 2 - 1);
-        });
         sequence.push(startCity);
 
-        return new Individual(sequence).calculateWeight(weightMatrix);
+        return new Individual(sequence)
+            .mutation(75)
+            .calculateWeight(weightMatrix);
     }
 
     static fromCrossover(parent1: Individual, parent2: Individual): Individual {
